@@ -20,8 +20,9 @@ CORE_DEPENDENCIES = [
 setup(
     name="autoavsr-pipelines",
     version="0.1.0",
-    packages=find_packages(include=['pipelines', 'pipelines.*']),
-    python_requires=">=3.10",  # Specify Python 3.12
+    packages=['autoavsr_pipelines'],  # This defines the import namespace
+    package_dir={'autoavsr_pipelines': 'pipelines'},  # This maps the directory to the namespace
+    python_requires=">=3.10",
     install_requires=CORE_DEPENDENCIES,
     description="Pipeline modules for AutoAVSR",
     author="Your Name",

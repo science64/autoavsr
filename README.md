@@ -23,13 +23,13 @@ This package provides the pipeline modules from the AutoAVSR project. Easy to in
 ## Installation
 
 ```bash
-pip install git+https://github.com/science64//autoavsr.git
+pip install git+https://github.com/science64/autoavsr.git
 ```
 
 ## Usage
 
 ```python
-from pipelines import AVSR, AVSRDataLoader, LandmarksDetector
+from autoavsr_pipelines import AVSR, AVSRDataLoader, LandmarksDetector
 
 # Initialize the models
 avsr_model = AVSR()
