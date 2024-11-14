@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 # Core dependencies including espnet
 CORE_DEPENDENCIES = [
-    'numpy<1.24',  # Changed to match espnet requirement
+    'numpy<1.24',  # Match espnet requirement
     'torch>=2.1.0',
     'torchaudio>=2.1.0',
     'torchvision>=0.16.0',
@@ -24,22 +24,23 @@ CORE_DEPENDENCIES = [
 ]
 
 setup(
-    name="autoavsr-complete",
-    version="0.2.1",  # Bumped version number
-    packages=find_packages(),
+    name="autoavsr_pipelines",  # Changed package name to match import
+    version="0.2.1",
+    packages=['autoavsr_pipelines'],  # Specify the package explicitly
+    package_dir={'autoavsr_pipelines': 'pipelines'},  # Map the directory to the package name
     python_requires=">=3.10",
     install_requires=CORE_DEPENDENCIES,
-    description="Complete AutoAVSR package with all modules",
+    description="AutoAVSR Pipelines Package",
     author="Your Name",
     author_email="your.email@example.com",
     url="https://github.com/science64/autoavsr",
     include_package_data=True,
     package_data={
-        '': [
+        'autoavsr_pipelines': [
             'configs/**/*',
             'espnet/**/*',
             'hydra_configs/**/*',
-            'pipelines/**/*'
+            '**/*',
         ],
     },
 )
