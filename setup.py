@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
-# Core dependencies needed for the functionality
+# Core dependencies including espnet
 CORE_DEPENDENCIES = [
     'numpy>=1.26.4',
-    'torch>=2.1.0',  # Adjusted for Python 3.12 compatibility
+    'torch>=2.1.0',
     'torchaudio>=2.1.0',
     'torchvision>=0.16.0',
     'mediapipe>=0.10.18',
@@ -15,17 +15,31 @@ CORE_DEPENDENCIES = [
     'av>=13.1.0',
     'ffmpeg-python>=0.2.0',
     'sounddevice>=0.5.1',
+    'espnet>=202401',
+    'espnet-model-zoo>=0.1.7',
+    'espnet-tts-frontend>=0.0.3',
+    'sentencepiece>=0.1.97',
+    'hydra-core>=1.3.2',  # For hydra_configs
+    'omegaconf>=2.3.0',   # Required by hydra
 ]
 
 setup(
-    name="autoavsr-pipelines",
-    version="0.1.0",
-    packages=['autoavsr_pipelines'],  # This defines the import namespace
-    package_dir={'autoavsr_pipelines': 'pipelines'},  # This maps the directory to the namespace
+    name="autoavsr-complete",
+    version="0.2.0",
+    packages=find_packages(),  # This will find all packages
     python_requires=">=3.10",
     install_requires=CORE_DEPENDENCIES,
-    description="Pipeline modules for AutoAVSR",
+    description="Complete AutoAVSR package with all modules",
     author="Your Name",
     author_email="your.email@example.com",
     url="https://github.com/science64/autoavsr",
+    include_package_data=True,
+    package_data={
+        '': [
+            'configs/**/*',
+            'espnet/**/*',
+            'hydra_configs/**/*',
+            'pipelines/**/*'
+        ],
+    },
 )

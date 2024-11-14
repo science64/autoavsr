@@ -1,0 +1,6 @@
+recursive-include configs *
+recursive-include espnet *
+recursive-include hydra_configs *
+recursive-include pipelines *
+include README.md
+include LICENSE
