@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 # Core dependencies including espnet
 CORE_DEPENDENCIES = [
-    #'numpy<1.24',  # Match espnet requirement
+    'numpy==1.26.4',  # Match espnet requirement
     'torch>=2.1.0',
     'torchaudio>=2.1.0',
     'torchvision>=0.16.0',
@@ -15,9 +15,9 @@ CORE_DEPENDENCIES = [
     'av>=13.1.0',
     'ffmpeg-python>=0.2.0',
     'sounddevice>=0.5.1',
-    # 'espnet>=202401',
-    # 'espnet-model-zoo>=0.1.7',
-    # 'espnet-tts-frontend>=0.0.3',
+    'espnet>=202401',
+    'espnet-model-zoo>=0.1.7',
+    'espnet-tts-frontend>=0.0.3',
     'sentencepiece>=0.1.97',
     'hydra-core>=1.3.2',
     'omegaconf>=2.3.0',
