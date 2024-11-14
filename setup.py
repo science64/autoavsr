@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 # Core dependencies including espnet
 CORE_DEPENDENCIES = [
-    'numpy>=1.26.4',
+    'numpy<1.24',  # Changed to match espnet requirement
     'torch>=2.1.0',
     'torchaudio>=2.1.0',
     'torchvision>=0.16.0',
@@ -19,14 +19,14 @@ CORE_DEPENDENCIES = [
     'espnet-model-zoo>=0.1.7',
     'espnet-tts-frontend>=0.0.3',
     'sentencepiece>=0.1.97',
-    'hydra-core>=1.3.2',  # For hydra_configs
-    'omegaconf>=2.3.0',   # Required by hydra
+    'hydra-core>=1.3.2',
+    'omegaconf>=2.3.0',
 ]
 
 setup(
     name="autoavsr-complete",
-    version="0.2.0",
-    packages=find_packages(),  # This will find all packages
+    version="0.2.1",  # Bumped version number
+    packages=find_packages(),
     python_requires=">=3.10",
     install_requires=CORE_DEPENDENCIES,
     description="Complete AutoAVSR package with all modules",
